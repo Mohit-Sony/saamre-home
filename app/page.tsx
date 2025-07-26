@@ -6,7 +6,7 @@ import Image from "next/image"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
 import Link from "next/link"
-
+import JellyVideoContainer from "@/components/ui/JellyVideoContainer"
 export default function SaanreHome() {
   const [scrollY, setScrollY] = useState(0)
 
@@ -45,7 +45,7 @@ export default function SaanreHome() {
           poster="/placeholder.svg?height=1080&width=1920"
         >
           <source src="/placeholder.mp4" type="video/mp4" />
-          <source src="https://www.artistryinc.in/assets/videos/header-bg.webm" type="video/webm" />
+          <source src="/" type="video/webm" />
           {/* Fallback image for browsers that don't support video */}
           <Image
             src="/placeholder.svg?height=1080&width=1920"
@@ -77,7 +77,7 @@ export default function SaanreHome() {
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-20 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl text-gray-900 mb-12 leading-tight">
+            <h2 className="text-3xl md:text-4xl font-serif mb-12 leading-tight">
                 Crafted In-House. Tailored For You.
               </h2>
               <p className="text-base text-gray-700 leading-loose mb-16">
@@ -92,14 +92,14 @@ export default function SaanreHome() {
             </div>
             <div className="grid grid-cols-2 gap-2">
               <Image
-                src="https://i.ibb.co/bjGp3bBP/Screenshot-2025-06-23-at-11-24-54-PM.png"
+                src="/Design.JPG"
                 alt="Elegant jewelry model"
                 width={400}
                 height={450}
                 className="rounded-lg object-cover"
               />
               <Image
-                src="https://i.ibb.co/YBYQZPB5/Screenshot-2025-06-23-at-11-36-02-PM.png"
+                src="/setting-1.JPG"
                 alt="Artisan inspecting gemstone"
                 width={400}
                 height={450}
@@ -134,39 +134,34 @@ export default function SaanreHome() {
       <section className="py-32 bg-white">
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-20 items-center">
-            <div className="grid grid-cols-2 gap-6">
+            {/* <div className="grid grid-cols-2 gap-6">
               <Image
-                src="/placeholder.svg?height=250&width=200"
+                src="/setting-2.JPG"
                 alt="Jewelry sketch"
                 width={200}
                 height={250}
                 className="rounded-lg object-cover"
               />
               <Image
-                src="/placeholder.svg?height=250&width=200"
+                src="/setting-3.JPG"
                 alt="Digital render"
                 width={200}
                 height={250}
                 className="rounded-lg object-cover mt-8"
               />
               <Image
-                src="/placeholder.svg?height=250&width=200"
+                src="/setting-4.JPG"
                 alt="Wax mold"
                 width={200}
                 height={250}
                 className="rounded-lg object-cover -mt-8"
               />
-              <Image
-                src="/placeholder.svg?height=250&width=200"
-                alt="Final product"
-                width={200}
-                height={250}
-                className="rounded-lg object-cover"
-              />
-            </div>
+
+            </div> */}
+            <JellyVideoContainer videoSrc="/designloop.mp4"/>
             <div>
-              <h2 className="text-3xl md:text-4xl font-serif text-gray-900 mb-12 leading-tight">
-                Every Sketch, Every Curve, Yours.
+            <h2 className="text-3xl md:text-4xl font-serif mb-12 leading-tight">
+            Every Sketch, Every Curve, Yours.
               </h2>
               <p className="text-base text-gray-700 leading-loose mb-12">
                 Whether you bring us a sketch, a moodboard, or a single idea — our design team translates it into
@@ -180,41 +175,47 @@ export default function SaanreHome() {
       </section>
 
       {/* Craftsmanship & Heritage */}
-      <section id="craftsmanship" className="py-32 bg-white">
-        <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-20 items-center">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-serif text-gray-900 mb-12 leading-tight">
-                Where Machines Assist, But Hands Define.
-              </h2>
-              <p className="text-base text-gray-700 leading-loose mb-16">
-                Our heritage lies in the finesse of our craftsmen — those who master meenakari, jadai, engraving, and
-                precision stone setting. Each piece passes through trained hands and critical eyes, reflecting
-                techniques honed over generations.
-              </p>
-              <Button variant="outline" className="border-gray-300 text-gray-600 hover:bg-gray-50">
-                <Link href="/craftsmanship">View Craftsmanship</Link>
-              </Button>
-            </div>
-            <div className="grid grid-cols-2 gap-4">
-              <Image
-                src="/placeholder.svg?height=300&width=250"
-                alt="Meenakari enamel work"
-                width={250}
-                height={300}
-                className="rounded-lg object-cover"
-              />
-              <Image
-                src="/placeholder.svg?height=300&width=250"
-                alt="Goldsmith at work"
-                width={250}
-                height={300}
-                className="rounded-lg object-cover mt-8"
-              />
-            </div>
-          </div>
+      <section className="grid md:grid-cols-2 gap-20 items-center max-w-7xl mx-auto px-4 py-16">
+      {/* Text Content */}
+      <div>
+        <h2 className="text-3xl md:text-4xl font-serif text-gray-900 mb-12 leading-tight">
+          Where Machines Assist, But Hands Define.
+        </h2>
+        <p className="text-base text-gray-700 leading-loose mb-16">
+          Our heritage lies in the finesse of our craftsmen — those who master meenakari, jadai, engraving, and
+          precision stone setting. Each piece passes through trained hands and critical eyes, reflecting
+          techniques honed over generations.
+        </p>
+        <button className="inline-flex items-center px-6 py-3 border border-gray-300 text-gray-600 bg-white hover:bg-gray-50 rounded-lg font-medium transition-colors duration-200">
+          View Craftsmanship
+        </button>
+      </div>
+
+      {/* Image Gallery - 2x2 Grid */}
+      <div className="grid grid-cols-2 gap-4">
+        {/* First Image */}
+        <div className="relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 group">
+          <img 
+            src="/setting-2.jpg?height=300&width=250"
+            alt="Meenakari enamel work"
+            width={250}
+            height={300}
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          />
         </div>
-      </section>
+
+        {/* Second Image - With Top Margin */}
+        <div className="relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 group mt-8">
+          <img 
+            src="/setting-3.jpg?height=300&width=250"
+            alt="Goldsmith at work"
+            width={250}
+            height={300}
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          />
+        </div>
+      </div>
+    </section>
 
       {/* Confidentiality & Trust */}
       <section className="py-32 bg-gray-900 text-white">
