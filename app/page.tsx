@@ -7,6 +7,7 @@ import Header from "@/components/header"
 import Footer from "@/components/footer"
 import Link from "next/link"
 import JellyVideoContainer from "@/components/ui/JellyVideoContainer"
+
 export default function SaanreHome() {
   const [scrollY, setScrollY] = useState(0)
 

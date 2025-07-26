@@ -1,20 +1,25 @@
-import type { Metadata } from 'next'
-import './globals.css'
+import type { Metadata } from "next";
+import "./globals.css";
+
+
 
 export const metadata: Metadata = {
-  title: 'v0 App',
-  description: 'Created with v0',
-  generator: 'v0.dev',
-}
+  title: "Saanre | Jewellery Manufacturing",
+  description: "Saanre is a premium jewelry manufacturing studio based in Jaipur & Bikaner, blending traditional Indian artistry with modern design and CAD-led precision. Trusted by global brands for end-to-end, confidential, and scalable production.",
+};
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body
+        className={` antialiased`}
+      >
+        {children}
+      </body>
     </html>
-  )
+  );
 }

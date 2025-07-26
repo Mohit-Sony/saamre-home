@@ -11,12 +11,13 @@ import Link from "next/link"
 export default function ProcessPage() {
   const [scrollY, setScrollY] = useState(0)
   const [activeStep, setActiveStep] = useState(0)
-  const [selectedStone, setSelectedStone] = useState(null)
-  const [polishSlider, setPolishSlider] = useState(50)
+  const [selectedStone, setSelectedStone] = useState<number | null>(null);
+    const [polishSlider, setPolishSlider] = useState(50)
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY)
     window.addEventListener("scroll", handleScroll)
+    
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
